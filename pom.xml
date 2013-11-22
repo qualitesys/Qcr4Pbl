@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.codehaus.sonar-plugins</groupId>
+    <artifactId>parent</artifactId>
+    <version>16</version>
+    <relativePath>../parent</relativePath>
+  </parent>
+
+  <!--
+  <groupId>com.qualitesys.maven.plugins</groupId>
+  -->
+  <artifactId>sonar-qcr4pbl-plugin</artifactId>
+  <version>3.13.09.276</version>
+  <packaging>sonar-plugin</packaging>
+  <name>QualityChecker4Pbl for Sonar</name>
+  <description>Enables analysis of Powerbuilder projects into Sonar.</description>
+  <url>http://docs.codehaus.org/display/SONAR/Sonar+Qcr4Pbl+Plugin</url>
+
+  <inceptionYear>2013</inceptionYear>
+  <organization>
+    <name>QualiteSys</name>
+    <url>http://www.qualitesys.com/</url>
+  </organization>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>http://jira.codehaus.org/browse/SONARPLUGINS/component/Qcr4Pbl</url>
+  </issueManagement> 
+  <!--
+  <scm>
+    <connection>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/Qcr4Pbl</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/sonar-plugins/trunk/Qcr4Pbl</developerConnection>
+    <url>http://svn.sonar-plugins.codehaus.org</url>
+  </scm> 
+  -->
+  <scm>
+      <connection>scm:git:https://github.com/qualitesys/Qcr4Pbl</connection>
+      <developerConnection>scm:git:https://github.com/qualitesys/Qcr4Pbl</developerConnection>
+  </scm>
+  <licenses>
+    <license>
+       <name>GNU LGPL 3</name>
+       <url>http://www.gnu.org/licenses/lgpl.txt</url>
+       <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+<!-- a jeter ???
+    <sonar.pluginClass>com.qualitesys.sonarqcrplugin.QcrPlugin</sonar.pluginClass>
+-->
+    <sonar.version>3.0</sonar.version>
+    <sonar.language>java</sonar.language>
+  </properties>
+<dependencies>
+   <dependency>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <version>${sonar.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-deprecated</artifactId>
+      <version>${sonar.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!--
+    IMPORTANT : only dependencies with test scope can be added to plugins.
+    -->
+    <!-- unit tests -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+
+  <!-- Modif D.C. 20/01/2010 pour deployer vers www.qualitesys.com
+  -->
+    <ciManagement>
+        <system>hudson</system>
+        <url>http://localhost:8080/job/sonar-qcr4pbl-plugin/</url>
+    </ciManagement>
+    <!-- Modif D.C. 2013 11 22 suppr
+    <distributionManagement>
+    <repository>
+      <id>ftp-repository</id>
+      <url>ftp://ftp.qualitesys.com/www/mavenrepository</url>
+    </repository>
+  </distributionManagement>
+  -->
+  <build>
+        <!-- Modif D.C. 20/01/2010 pour deployer vers www.qualitesys.com
+        -->
+        <extensions>
+          <!-- Enabling the use of FTP -->
+          <extension>
+            <groupId>org.apache.maven.wagon</groupId>
+             <artifactId>wagon-ftp</artifactId>
+             <version>2.0</version>
+          </extension>
+        </extensions>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.codehaus.sonar</groupId>
+              <artifactId>sonar-packaging-maven-plugin</artifactId>
+              <extensions>true</extensions>
+              <version>0.4</version>
+              <configuration>
+                <pluginKey>qcr4pbl</pluginKey>
+                <pluginName>QualityChecker4Pbl for Sonar</pluginName>
+                <pluginClass>com.qualitesys.sonarqcr4pblplugin.QcrPlugin</pluginClass>
+                <pluginDescription>This plugin makes the bridge between the QualityChecker4Pbl suite and Sonar</pluginDescription>
+              </configuration>
+            </plugin>
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                  <source>1.5</source>
+                  <target>1.5</target>
+                  <showDeprecation>false</showDeprecation>
+                  <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            -->
+        </plugins>
+    </pluginManagement>
+  </build>
+</project>
+
+
+
+

@@ -1,0 +1,93 @@
+<ruleset>
+   <rule>
+      <key>QC-PBL000100ALL</key>
+      <name>QC-PBL000100 Specify a WHERE clause on a DELETE SQL statement</name>
+      <priority>BLOCKER</priority>
+      <description><![CDATA[Specify a WHERE clause on a DELETE SQL statement]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL000101ALL</key>
+      <name>QC-PBL000101 Specify a WHERE clause on a SELECT SQL statement</name>
+      <priority>BLOCKER</priority>
+      <description><![CDATA[Specify a WHERE clause on a SELECT SQL statement]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL000102ALL</key>
+      <name>QC-PBL000102 Specify a WHERE clause on a UPDATE SQL statement</name>
+      <priority>BLOCKER</priority>
+      <description><![CDATA[Specify a WHERE clause on a UPDATE SQL statement]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL999999ALL</key>
+      <name>QC-PBL999999 Syntax error in source code</name>
+      <priority>BLOCKER</priority>
+      <description><![CDATA[Syntax error in source code]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBLCWE390ALL</key>
+      <name>QC-PBLCWE390 Detection of error condition without action</name>
+      <priority>MAJOR</priority>
+      <description><![CDATA[Detection of error condition without action]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBLCWE392ALL</key>
+      <name>QC-PBLCWE392 Failure de report error in status code</name>
+      <priority>MAJOR</priority>
+      <description><![CDATA[Failure de report error in status code]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBLCWE384ALL</key>
+      <name>QC-PBLCWE384 Return inside finally block</name>
+      <priority>MAJOR</priority>
+      <description><![CDATA[Return inside finally block]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL000001ALL</key>
+      <name>QC-PBL000001 constant names must be uppercase</name>
+      <priority>MINOR</priority>
+      <description><![CDATA[constant names must be uppercase]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL000002ALL</key>
+      <name>QC-PBL000002 variable name of 'xxx' type must start with '*yyy_'</name>
+      <priority>MINOR</priority>
+      <description><![CDATA[variable name of 'xxx' type must start with '*yyy_']]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL000003ALL</key>
+      <name>QC-PBL000003 Powerbuilder control name of 'xxx' type must start with 'yyy_'</name>
+      <priority>MINOR</priority>
+      <description><![CDATA[Powerbuilder control name of 'xxx' type must start with 'yyy_']]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL000103ALL</key>
+      <name>QC-PBL000103 All SQL keywords must be uppercased</name>
+      <priority>MINOR</priority>
+      <description><![CDATA[All SQL keywords must be uppercased]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL999996ALL</key>
+      <name>QC-PBL999996 Local Cut and Paste Detector in single file</name>
+      <priority>INFO</priority>
+      <description><![CDATA[Local Cut and Paste Detector in single file]]></description>
+      <category name="Reliability"/>
+   </rule>
+   <rule>
+      <key>QC-PBL001001BETHA</key>
+      <name>QC-PBL001001 variable name of 'xxx' type must start with '*yyy'</name>
+      <priority>MINOR</priority>
+      <description><![CDATA[variable name of 'xxx' type must start with '*yyy']]></description>
+      <category name="Reliability"/>
+   </rule>
+</ruleset>
